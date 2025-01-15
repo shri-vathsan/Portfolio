@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init(""); // Replace with your EmailJS public key
+        })();
+    </script>
+
+    <title>Portfolio</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+     <nav>
+        <div class="left">
+            <a href="/">Shrivathsan</a>
+        </div>
+        <div class="right">
+            <a href="https://github.com/shri-vathsan" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/shrivathsan-v/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="mailto:shrivathsan319@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Email</span>
+            </a>
+
+        </div>
+     </nav>
+     <main>
+        <!--Section 1: PERSONAL DETAILS-->
+        <section class="hero-section">
+            <div class="text">
+            <h2>
+                Hi, I'm Shrivathsan V 
+            </h2>
+            <p>
+                A highly skilled professional with expertise in digital manufacturing and proficiency in C#, .NET, ASP.NET, HTML, CSS, and JavaScript. Driven by innovation and a passion for technology, I am eager to contribute to impactful projects, leveraging my technical skills to create solutions that advance engineering and technology in meaningful ways.
+            </p>
+                <div class="links">
+                    <a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                     </a>
+
+                    <!--<a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                     </a>-->
+
+                    <a href="#contact">
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>Contact</span>
+                     </a>
+                </div>
+            </div>
+            <div class="headshot">
+                <img src="logos/ShrivathsanV (1) (1).webp" alt="Shrivathsan headshot">
+            </div>
+        </section>
+
+        <!--Section 2: SKILLS-->
+        <section id="skills" class="skills-section">
+            <h2>Skills</h2>
+            <div class="cells">
+                <div class="cell">
+                    <img src="/logos/csharp-logo.webp" alt="C Sharp Logo">
+                    <span>C#</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/logos/asp .net-logo.webp" alt="ASP .NET Logo">
+                    <span>ASP .NET</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/logos/MS Sql Server-logo.webp" alt="MS SQL Server Logo">
+                    <span>MS SQL Server</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/logos/html-logo.webp" alt="HTML Logo">
+                    <span>HTML</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/logos/css-logo.webp" alt="CSS Logo">
+                    <span>CSS</span>
+                </div>
+
+                <div class="cell">
+                    <img src="/logos/javascript-logo.webp" alt="Javascript Logo">
+                    <span>Javascript</span>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!--Section 3: Projects-->
+        <!--<section id="Projects" class="projects-section">
+            FOR FUTURE IMPLEMENTATIONS
+        </section>-->
+
+        <!--Section 3: CONTACT-->
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <div class="group">
+                <div class="left-content">
+                    <div class="text">
+                        "Feel free to reach out via email for inquiries!"
+                    </div>
+                    <div class="links">  
+                        <a href="mailto:shrivathsan319@gmail.com">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>shrivathsan319@gmail.com</span>
+                        </a>
+                    </div> 
+                </div>
+                
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                
+                    <button type="submit">Send Message</button>
+                </form>
+                
+                <script>
+                    document.getElementById('contact-form').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent form from refreshing the page
+                
+                        const form = this;
+                        const serviceID = ''; // Replace with your service ID
+                        const templateID = ''; // Replace with your template ID
+                
+                        emailjs.sendForm(serviceID, templateID, form)
+                            .then(() => {
+                                alert('Message sent successfully!');
+                                form.reset();
+                            }, (error) => {
+                                alert('Failed to send the message. Try again later.');
+                                console.error('Error:', error);
+                            });
+                    });
+                </script>
+  
+            </div>
+
+        </section>
+    
+    
+
+     </main>
+</body>
+</html>
